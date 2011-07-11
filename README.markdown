@@ -1,6 +1,6 @@
 sendkeys
 =======
-Couple of bash scripts for sending key presses to and open window in X. Uses Alan Donovan's xsendkey.c (http://people.csail.mit.edu/adonovan/hacks/xsendkey.html).
+Couple of bash scripts for sending key presses to window in X. Uses Alan Donovan's xsendkey.c (http://people.csail.mit.edu/adonovan/hacks/xsendkey.html).
 
 Installation
 ------------
@@ -10,10 +10,9 @@ Installation
 
 Usage
 -----
-Send a single key press:
-* sendkey.sh 'Google Chrome' F5
-
-Send a series of key presses:
-* sendkeys.sh 'Terminal' "start-server.sh"
+* Send a single key press with sendkey.sh
+** sendkey.sh 'Google Chrome' F5
+* Send a series of key presses with sendkeys.sh
+** sendkeys.sh 'Terminal' "start-server.sh"
 
 vim/sendkeys.vim contains some examples of using these scripts to do common tasks from Vim.
