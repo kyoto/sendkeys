@@ -22,6 +22,8 @@ vim/sendkeys.vim contains some examples of using these scripts to do common task
 
 ## License
 
+License details for Alan Donovan's xsendkey.c can be found at the top of that file. Other files are released under the MIT license.
+
 ### The MIT License (MIT)
 
 Copyright (c) 2012 Andrew Pickering, andypickering.com
