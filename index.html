@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sendkeys by kyoto</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Sendkeys</h1>
+        <p>Send key presses to open windows in X</p>
+
+        <p class="view"><a href="https://github.com/kyoto/sendkeys">View the Project on GitHub <small>kyoto/sendkeys</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kyoto/sendkeys/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kyoto/sendkeys/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kyoto/sendkeys">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>sendkeys</h1>
+
+<p>Couple of bash scripts for sending key presses to windows in X. Uses Alan Donovan's xsendkey.c (<a href="http://people.csail.mit.edu/adonovan/hacks/xsendkey.html">http://people.csail.mit.edu/adonovan/hacks/xsendkey.html</a>).</p>
+
+<h2>Installation</h2>
+
+<ol>
+<li>Install wmctrl (on Ubuntu run <code>sudo apt-get install wmctrl</code>)</li>
+<li><code>git clone https://github.com/kyoto/sendkeys.git</code></li>
+<li><code>cd sendkeys/</code></li>
+<li><code>make</code></li>
+<li>Move the compiled xsendkey binary somewhere on your <code>$PATH</code>
+</li>
+</ol><h2>Usage Examples</h2>
+
+<p>Note that the target application (e.g. Google Chrome) needs to already be open for these to work.</p>
+
+<h4>Send a single key press with sendkey.sh</h4>
+
+<ul>
+<li><code>sendkey.sh 'Google Chrome' F5</code></li>
+</ul><h4>Send a series of key presses with sendkeys.sh</h4>
+
+<ul>
+<li><code>sendkeys.sh 'Terminal' 'echo hello'</code></li>
+<li><code>sendkeys.sh 'Terminal' 'start-server.sh'</code></li>
+</ul><h4>Open multiple web searches in Google Chrome</h4>
+
+<p>Example bash script to open multiple web searches in different Google Chrome tabs. Takes the text file example.txt as input and searches for each line using Chrome's Omnibox.</p>
+
+<div class="highlight">
+<pre><span class="c">#!/bin/bash</span>
+<span class="nv">title</span><span class="o">=</span><span class="s1">'Chrome'</span>
+cat example.txt | <span class="k">while </span><span class="nb">read </span>line; <span class="k">do</span>
+<span class="k">  </span>sendkey.sh <span class="s2">"$title"</span> <span class="s1">'Control+t'</span>
+  sendkey.sh <span class="s2">"$title"</span> <span class="s1">'Control+l'</span>
+  sendkeys.sh <span class="s2">"$title"</span> <span class="s2">"$line"</span>
+  sendkey.sh <span class="s2">"$title"</span> <span class="s1">'Return'</span>
+<span class="k">done</span>
+</pre>
+</div>
+
+
+<h4>Vim</h4>
+
+<p>examples/vim/sendkeys.vim contains some examples of using these scripts to do common tasks in Vim.</p>
+
+<h2>License</h2>
+
+<p>License details for Alan Donovan's xsendkey.c can be found at the top of that file. Other files are released under the MIT license.</p>
+
+<h3>The MIT License (MIT)</h3>
+
+<p>Copyright (c) 2012 Andrew Pickering, andypickering.com</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kyoto">kyoto</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-3245510-8");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
