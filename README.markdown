@@ -12,16 +12,35 @@ Couple of bash scripts for sending key presses to windows in X. Uses Alan Donova
 
 ## Usage Examples
 
-Send a single key press with sendkey.sh
+Note that the target application (e.g. Google Chrome) needs to already be open for these to work.
+
+#### Send a single key press with sendkey.sh
 
 * ```sendkey.sh 'Google Chrome' F5```
 
-Send a series of key presses with sendkeys.sh
+#### Send a series of key presses with sendkeys.sh
 
 * ```sendkeys.sh 'Terminal' 'echo hello'```
 * ```sendkeys.sh 'Terminal' 'start-server.sh'```
 
-vim/sendkeys.vim contains some examples of using these scripts to do common tasks from Vim.
+#### Open multiple web searches in Google Chrome
+
+Example bash script to open multiple web searches in different Google Chrome tabs. Takes the text file example.txt as input and searches for each line using Chrome's Omnibox.
+
+```bash
+#!/bin/bash
+title='Chrome'
+cat example.txt | while read line; do
+  sendkey.sh "$title" 'Control+t'
+  sendkey.sh "$title" 'Control+l'
+  sendkeys.sh "$title" "$line"
+  sendkey.sh "$title" 'Return'
+done
+```
+
+#### Vim
+
+examples/vim/sendkeys.vim contains some examples of using these scripts to do common tasks in Vim.
 
 ## License
 
