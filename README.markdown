@@ -4,19 +4,22 @@ Couple of bash scripts for sending key presses to windows in X. Uses Alan Donova
 
 ## Installation
 
-1. Install wmctrl if you don't already have it
-2. Run make
-3. Move the compiled xsendkey somewhere on your path
+1. Install wmctrl (on Ubuntu run ```sudo apt-get install wmctrl```)
+2. ```git clone https://github.com/kyoto/sendkeys.git```
+3. ```cd sendkeys/```
+4. ```make```
+5. Move the compiled xsendkey binary somewhere on your ```$PATH```
 
-## Usage
+## Usage Examples
 
 Send a single key press with sendkey.sh
 
-* sendkey.sh 'Google Chrome' F5
+* ```sendkey.sh 'Google Chrome' F5```
 
 Send a series of key presses with sendkeys.sh
 
-* sendkeys.sh 'Terminal' 'start-server.sh'
+* ```sendkeys.sh 'Terminal' 'echo hello'```
+* ```sendkeys.sh 'Terminal' 'start-server.sh'```
 
 vim/sendkeys.vim contains some examples of using these scripts to do common tasks from Vim.
 
