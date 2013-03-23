@@ -1,6 +1,6 @@
 # sendkeys
 
-Couple of bash scripts for sending key presses to windows in X. Uses Alan Donovan's xsendkey.c (http://people.csail.mit.edu/adonovan/hacks/xsendkey.html).
+Bash scripts for sending key presses to open applications in X Windows (GNOME, KDE, Unity, etc.). This can be useful for automating common tasks such as sending an F5 key press to a browser window to refresh the page. Uses Alan Donovan's xsendkey.c (http://people.csail.mit.edu/adonovan/hacks/xsendkey.html).
 
 ## Installation
 
