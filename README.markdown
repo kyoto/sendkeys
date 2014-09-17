@@ -4,7 +4,7 @@ Bash scripts for sending key presses to open applications in X Windows (GNOME, K
 
 ## Installation
 
-1. Install wmctrl (on Ubuntu run ```sudo apt-get install wmctrl```)
+1. Install wmctrl (on Ubuntu run ```sudo apt-get install wmctrl libx11-dev```)
 2. ```git clone https://github.com/kyoto/sendkeys.git```
 3. ```cd sendkeys/```
 4. ```make```
