@@ -1,14 +1,22 @@
 #!/bin/bash
 # Send a series of key presses to an open window with a given window title
+# It only sends the key events if it found the window.
 # Usage: sendkeys.sh WINDOW-TITLE KEY
 #        WINDOW-TITLE can be a regex
 #        e.g. sendkeys.sh 'Terminal' 'start-server.sh'
 title=$1
 keys=$2
 
+# Get the window ID using the 'wmctrl -l' command
+windowId=`wmctrl -l | awk "/$title/ {print "'$1}'`
+# If we didn't find the window, then exit with an error code.
+if [ ! $windowId ]; then
+    exit 1
+fi
+
+# Send one character at a time
 for i in $(seq 0 $((${#keys} - 1))); do
   key=${keys:$i:1}
-  windowId=`wmctrl -l | awk "/$title/ {print "'$1}'`
 
   # Chars that we can't pass straight through to xsendkey
   # This list taken from X11/keysymdef.h
