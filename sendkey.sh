@@ -9,9 +9,10 @@ key=$2
 
 # Get the window ID using the 'wmctrl -l' command
 windowId=`wmctrl -l | awk "/$title/ {print "'$1}'`
+
 # If we didn't find the window, then exit with an error code.
 if [ ! $windowId ]; then
-    exit 1
+  exit 1
 fi
 
 # Send the one key press
