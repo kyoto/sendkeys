@@ -1,6 +1,6 @@
 #!/bin/bash
-# Send a single key press to an open window with a given window title
-# It only sends the key event if it found the window.
+# Send a single key press to an opened window with a given title.
+# It sends the key event only if the window is found.
 # Usage: sendkey.sh WINDOW-TITLE KEY
 #        WINDOW-TITLE can be a regex
 #        e.g. sendkey.sh 'Google Chrome' F5
